@@ -291,7 +291,8 @@ const page = {
 
 const proxy = {
 	address: envOrString(process.env.PROXY_ADDRESS),
-	port: envOrNumber(process.env.PROXY_PORT, 80)
+	port: envOrNumber(process.env.PROXY_PORT, 80),
+	protocol: envOrString(process.env.PROXY_PROTOCOL, 'http')
 };
 
 // Check for deprecated configuration values
@@ -316,6 +317,7 @@ const store = {
 			ryzen5800: envOrNumber(process.env.MAX_PRICE_SERIES_RYZEN5800),
 			ryzen5900: envOrNumber(process.env.MAX_PRICE_SERIES_RYZEN5900),
 			ryzen5950: envOrNumber(process.env.MAX_PRICE_SERIES_RYZEN5950),
+			sf: envOrNumber(process.env.MAX_PRICE_SERIES_CORSAIR_SF),
 			sonyps5c: -1,
 			sonyps5de: -1,
 			'test:series': -1,
